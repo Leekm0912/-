@@ -1,3 +1,7 @@
+from codingTest import CheckTime
+
+
+@CheckTime.CheckTime
 # 배열을 입력받아 합으로 0을 만들 수 있는 3개의 엘리먼트를 출력
 def solution1(nums: list) -> list:
     # 브루트 포스 계산
@@ -22,6 +26,7 @@ def solution1(nums: list) -> list:
     return answer
 
 
+@CheckTime.CheckTime
 def solution2(nums: list) -> list:
     # 투 포인터 계산
     answer = []
@@ -57,5 +62,5 @@ def solution2(nums: list) -> list:
     return answer
 
 
-print(solution1([-1, 0, 1, 2, -1, -4]))
-print(solution2([-1, 0, 1, 2, -1, -4]))
+solution1([-1, 0, 1, 2, -1, -4])
+solution2([-1, 0, 1, 2, -1, -4])
