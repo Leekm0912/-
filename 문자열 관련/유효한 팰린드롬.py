@@ -3,7 +3,10 @@ import collections
 from typing import Deque
 import re
 
+from codingTest import CheckTime
 
+
+@CheckTime.CheckTime
 def solution(text):
     start = 0
     end = len(text) - 1
@@ -31,6 +34,7 @@ def solution(text):
     return True
 
 
+@CheckTime.CheckTime
 def solution2(s: str) -> bool:
     strs = []
     for char in s:
@@ -45,6 +49,7 @@ def solution2(s: str) -> bool:
     return True
 
 
+@CheckTime.CheckTime
 def solution3(s: str) -> bool:
     # 자료형 데크로 선언
     strs: Deque = collections.deque()
@@ -60,6 +65,7 @@ def solution3(s: str) -> bool:
     return True
 
 
+@CheckTime.CheckTime
 def solution4(s: str) -> bool:
     s = s.lower()
     # 정규식으로 불필요한 문자 필터링
@@ -68,34 +74,11 @@ def solution4(s: str) -> bool:
     return s == s[::-1]  # 슬라이싱
 
 
-start_time = timeit.default_timer()  # 시작 시간 체크
-for _ in range(1000):
-    solution("A man, a plan, a canal: Panama")
-    solution("race a car")
-
-terminate_time = timeit.default_timer()  # 종료 시간 체크
-print(f"s1 : {terminate_time - start_time}초 걸렸습니다.")
-
-start_time = timeit.default_timer()  # 시작 시간 체크
-for _ in range(1000):
-    solution2("A man, a plan, a canal: Panama")
-    solution2("race a car")
-
-terminate_time = timeit.default_timer()  # 종료 시간 체크
-print(f"s2 : {terminate_time - start_time}초 걸렸습니다.")
-
-start_time = timeit.default_timer()  # 시작 시간 체크
-for _ in range(1000):
-    solution3("A man, a plan, a canal: Panama")
-    solution3("race a car")
-
-terminate_time = timeit.default_timer()  # 종료 시간 체크
-print(f"s3 : {terminate_time - start_time}초 걸렸습니다.")
-
-start_time = timeit.default_timer()  # 시작 시간 체크
-for _ in range(1000):
-    solution4("A man, a plan, a canal: Panama")
-    solution4("race a car")
-
-terminate_time = timeit.default_timer()  # 종료 시간 체크
-print(f"s4 : {terminate_time - start_time}초 걸렸습니다.")
+solution("A man, a plan, a canal: Panama")
+solution("race a car")
+solution2("A man, a plan, a canal: Panama")
+solution2("race a car")
+solution3("A man, a plan, a canal: Panama")
+solution3("race a car")  # 시작 시간 체크
+solution4("A man, a plan, a canal: Panama")
+solution4("race a car")

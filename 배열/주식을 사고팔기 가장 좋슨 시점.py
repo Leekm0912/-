@@ -16,8 +16,8 @@ def solution2(prices):
     answer = 0
     min_price = sys.maxsize
     for price in prices:
-        min_price = min(min_price, price)
-        answer = max(answer, price - min_price)
+        min_price = min(price, min_price)
+        answer = max(price - min_price, answer)
     return answer
 
 
