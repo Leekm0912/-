@@ -18,11 +18,12 @@ class Solution:
             next_node, node.next = node.next, prev
             # 그 후 next_node (원래 next였던 노드), node(현재 노드)를 실행시켜줌
             return reverse(next_node, node)
+
         # 제일 첫 node를 인자로 주면서 작동시킴.
         return reverse(head)
 
     @staticmethod
-    def reverseList2(li: ListNode)-> ListNode:
+    def reverseList2(li: ListNode) -> ListNode:
         node = li
         prev = None
         while node:
@@ -35,8 +36,6 @@ class Solution:
             # temp에 저장해놨던 다음노드를 현재 노드로.
             node = temp
         return prev
-
-
 
     @staticmethod
     def printList(li, text=None):
@@ -52,7 +51,7 @@ class Solution:
 
 if __name__ == "__main__":
     a = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
-    #Solution.printList(a)
+    # Solution.printList(a)
     Solution.printList(Solution.reverseList(a))
     a = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(6))))))
     Solution.printList(Solution.reverseList2(a))
