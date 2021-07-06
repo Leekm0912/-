@@ -14,6 +14,7 @@ class MyQueue:
         return self.output[-1]
 
     def pop(self):
+        # peek를 해서 output이 없다면 만들어줌
         self.peek()
         return self.output.pop()
 
