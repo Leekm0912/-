@@ -7,6 +7,7 @@ class CircularQueue:
 
     # 큐에 추가
     def enQueue(self, num):
+        # rear가 None이면 큐가 꽉 차있지 않음.
         if self.queue[self.rear] is None:
             print("추가", num)
             self.queue[self.rear] = num
@@ -27,6 +28,10 @@ class CircularQueue:
             self.front = (self.front + 1) % self.size
             return True
 
+    # 맨 앞
+    def Front(self):
+        return self.queue[self.front]
+
     # 가장 마지막
     def Rear(self):
         return self.queue[self.rear - 1]
@@ -40,10 +45,6 @@ class CircularQueue:
     def isEmpty(self):
         # front와 rear가 같고, front값이 None이면 비어있음
         return self.front == self.rear and self.queue[self.front] is None
-
-    # 맨 앞
-    def Front(self):
-        return self.queue[self.front]
 
     def printQueue(self):
         f = self.front
