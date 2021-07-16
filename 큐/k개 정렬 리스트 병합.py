@@ -2,7 +2,7 @@
 import heapq
 from typing import List
 
-from CheckTime import CheckTime
+from codingTest.CheckTime import CheckTime
 
 
 class ListNode:
@@ -35,6 +35,7 @@ class Solution:
         for i in range(len(data)):
             if data[i]:
                 # 저장할때 값, 루트 인덱스 번호, 객체 순 저장.
+                # min heap에 저장할때는 첫번째 원소(값) 기준으로 저장.
                 heapq.heappush(heap, (data[i].val, i, data[i]))
 
         # 힙 추출 이후 다음 노드는 다시 저장.
