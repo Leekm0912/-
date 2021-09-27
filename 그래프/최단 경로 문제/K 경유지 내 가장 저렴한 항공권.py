@@ -1,4 +1,4 @@
-import heapq
+ import heapq
 from collections import defaultdict
 
 import CheckTime
