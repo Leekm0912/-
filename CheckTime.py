@@ -11,7 +11,7 @@ class CheckTime:
             start = default_timer()
             result = self.func(*args, **kwargs)
             end = default_timer()
-            print("[{}]: {} sec\nresult : {}".format(self.func.__name__, timedelta(seconds=end - start), result))
+            print(f"[{self.func.__name__}]: {timedelta(seconds=end - start)} sec\nresult : {result}")
             return result
 
         return wrapper_fn()
