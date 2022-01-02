@@ -17,6 +17,7 @@ public class TimeCheckService {
 					// 메소드 호출
 					result = method.invoke(o.getClass().getDeclaredConstructor().newInstance(), args);
 				} catch (Exception e) {
+					e.printStackTrace();
 				} finally {
 					long afterTime = System.currentTimeMillis(); // 코드 실행 후의 시간 측정
 					// 메소드 이름 출력
