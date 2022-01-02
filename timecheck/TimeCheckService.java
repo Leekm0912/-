@@ -11,8 +11,8 @@ public class TimeCheckService {
 		for (Method method : declaredMethods) {
 			// TimeCheck 어노테이션이 적용되었는지 확인
 			if (method.isAnnotationPresent(TimeCheck.class)) {
-				long beforeTime = System.currentTimeMillis(); // 시작시간 측정
 				Object result = null;
+				long beforeTime = System.currentTimeMillis(); // 시작시간 측정
 				try {
 					// 메소드 호출
 					result = method.invoke(o.getClass().getDeclaredConstructor().newInstance(), args);
