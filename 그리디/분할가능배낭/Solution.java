@@ -2,8 +2,12 @@ package greedy;
 
 import java.util.*;
 
+import timecheck.TimeCheck;
+import timecheck.TimeCheckService;
+
 public class Solution {
 
+	@TimeCheck
 	public static double solution(List<double[]> cargo, int max_weight) {
 		// 람다식 내부에서 쓰기위해 배열로 선언.
 		double[] answer = {0.0};
@@ -51,10 +55,10 @@ public class Solution {
 				return;
 			}
 		});
-		
+
 		return answer[0];
 	}
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<double[]> l = new ArrayList<>();
@@ -64,8 +68,7 @@ public class Solution {
 		l.add(new double[]{10, 4});
 		l.add(new double[]{1, 1});
 		l.add(new double[]{2, 2});
-		
-		System.out.println(solution(l, 15));
-	}
 
+		new TimeCheckService(new Solution(), l, 15);
+	}
 }
