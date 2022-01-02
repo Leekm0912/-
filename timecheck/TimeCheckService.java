@@ -3,10 +3,9 @@ package timecheck;
 import java.lang.reflect.Method;
 
 public class TimeCheckService {
-	public static void main(String[] args) {
+	public TimeCheckService(Object o, Object... args) {
 		// Service 클래스로부터 메소드 정보를 얻음
-		Solution solution = new Solution();
-		Method[] declaredMethods = solution.getClass().getDeclaredMethods();
+		Method[] declaredMethods = o.getClass().getDeclaredMethods();
 
 		// Method 객체를 하나씩 처리
 		for (Method method : declaredMethods) {
@@ -16,7 +15,7 @@ public class TimeCheckService {
 				Object result = null;
 				try {
 					// 메소드 호출
-					result = method.invoke(solution);
+					result = method.invoke(o.getClass().getDeclaredConstructor().newInstance(), args);
 				} catch (Exception e) {
 				} finally {
 					long afterTime = System.currentTimeMillis(); // 코드 실행 후의 시간 측정
@@ -24,10 +23,7 @@ public class TimeCheckService {
 					System.out.println("[" + method.getName() + "] ");
 					System.out.println("실행결과 : " + result);
 					System.out.println("실행시간(ms) : " + (afterTime - beforeTime));
-
 				}
-				System.out.println();
-
 			}
 		}
 	}
