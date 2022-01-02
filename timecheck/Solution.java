@@ -6,7 +6,7 @@ public class Solution {
 		for(int i=0; i<2; i++) {
 			try {
 				Thread.sleep(1000);
-				System.out.println("test" + num);
+				System.out.println("test " + num);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

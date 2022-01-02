@@ -4,12 +4,12 @@ import java.lang.reflect.Method;
 
 public class TimeCheckService {
 	public TimeCheckService(Object o, Object... args) {
-		// Service 클래스로부터 메소드 정보를 얻음
+		// 파라미터로부터 리플렉션을 통해 메소드 정보를 얻음
 		Method[] declaredMethods = o.getClass().getDeclaredMethods();
 
 		// Method 객체를 하나씩 처리
 		for (Method method : declaredMethods) {
-			// PrintAnnotation이 적용되었는지 확인
+			// TimeCheck 어노테이션이 적용되었는지 확인
 			if (method.isAnnotationPresent(TimeCheck.class)) {
 				long beforeTime = System.currentTimeMillis(); // 시작시간 측정
 				Object result = null;
