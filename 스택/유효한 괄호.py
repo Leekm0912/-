@@ -23,5 +23,5 @@ def solution(data) -> bool:
 
 
 if __name__ == "__main__":
-    print(solution("()[]{}"))
-    print(solution("(]{}"))
+    solution("()[]{}")
+    solution("(]{}")
