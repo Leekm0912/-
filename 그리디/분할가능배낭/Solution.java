@@ -15,7 +15,7 @@ public class Solution {
 
 		// {단가, 가격, 무게} 순으로 새로 만들어 주기 위한 리스트.
 		List<double[]> pack = new ArrayList<>();
-		// {단가(가격/무게), 가격, 무게} 형식으로 저장.
+		// {단가(가격/무게}, 가격, 무게} 형식으로 저장.
 		cargo.stream()
 		.forEach(v->{
 			pack.add(new double[] {v[0] / v[1], v[0], v[1]});
