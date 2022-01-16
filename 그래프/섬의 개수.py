@@ -1,7 +1,7 @@
-from CheckTime import CheckTime
+from codingTest import CheckTime
 
 
-@CheckTime
+@CheckTime.CheckTime
 def solution1(data):
     temp1 = []
     for d in data:
@@ -15,7 +15,7 @@ def solution1(data):
             if data[i][j] == "1":
                 dfs(data, i, j)
                 count += 1
-    print(data)
+    # print(data)
     return count
 
 
@@ -36,7 +36,7 @@ def dfs(data, i, j):
     dfs(data, i, j - 1)
 
 
-@CheckTime
+@CheckTime.CheckTime
 def solution2(data):
     temp1 = []
     for d in data:
@@ -61,21 +61,21 @@ def solution2(data):
                     stack.append((in_i, in_j + 1))
                     stack.append((in_i, in_j - 1))
                 count += 1
-    print(data)
+    # print(data)
     return count
 
 
 if __name__ == "__main__":
-    print(solution1([
+    solution1([
         "11110",
         "11010",
         "11000",
         "00000"
-    ]))
+    ])
 
-    print(solution2([
+    solution2([
         "11110",
         "11010",
         "11000",
         "00000"
-    ]))
+    ])
